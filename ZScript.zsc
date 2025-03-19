@@ -1,0 +1,6 @@
+version "4.14.0"
+
+#include "ZScript/ZScript_HUD"
+#include "ZSCript/WeaponBase"
+#include "ZScript/Weapons/SPAS12Shotgun"
+#include "sway/sway.txt"

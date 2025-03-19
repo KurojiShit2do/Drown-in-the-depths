@@ -1,0 +1,14 @@
+texture HP_GLON
+  pic HP_GLON tics 15
+  pic HP_GLOFF tics 125
+  
+
+texture HP_YLON
+  pic HP_YLON tics 5
+  pic HP_YLOFF tics 95
+  
+  
+texture HP_RLON
+  pic HP_RLON tics 2
+  pic HP_RLOFF tics 10
+  
