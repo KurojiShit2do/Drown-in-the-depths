@@ -6,12 +6,13 @@ class SPAS12 : KurojiWeapon{
         Weapon.SlotNumber 3;
         Weapon.SlotPriority 5;
         Weapon.AmmoType "Shell";
-        Weapon.AmmoUse 0;
+        Weapon.AmmoUse 1;
         Weapon.AmmoGive 8;
         Inventory.PickupMessage "You got the \cfAuto Raper\c-!";
         Tag "SPAS12";
 
-        +WEAPON.NOAUTOFIRE;
+        +Weapon.noautofire
+        +Weapon.AMMO_OPTIONAL
     }
     
     States{
@@ -19,8 +20,11 @@ class SPAS12 : KurojiWeapon{
             SHOT A -1;
             Stop;
 
+        NoAmmo:
+            SPSS A 10;
+            GoTo Ready;
         Ready:
-            SPSS  A 1 A_WeaponReady();
+            SPSS  A 1 A_WeaponReady(WRF_ALLOWRELOAD);
             Loop;
         Select:
             SPSS  A 1 A_Raise(12);
@@ -31,23 +35,32 @@ class SPAS12 : KurojiWeapon{
         
         Fire:
             TNT1 A 0 {
+                if(invoker.WeaponMagCount == 0){
+                    SetWeaponState("Reload");
+			        return;
+                }
+                Weapon_TakeAmmo();
                 A_AlertMonsters();
                 A_StartSound("SPAS12/Fire",1);
-                A_FireBullets(4,3,6,12,"KurojiBulletPuff",FBF_USEAMMO|FBF_NORANDOM,8192);
+                A_FireBullets(4,3,6,12,"KurojiBulletPuff",FBF_NORANDOM,8192);
                 A_SetOffsetVariables(frandom(-1.5,1.5),frandom(-1,0));
             }
             SPSS BC 1 BRIGHT A_RandomWeaponOffset;
             SPSS DEFG 1 ;
             SPSS HIJ 1;
-            SPSS A 5 A_WeaponOffsetReset;
             GoTo Ready;
 
         AltFire:
             TNT1 A 0 {
+                if(invoker.WeaponMagCount <= 1){
+                    SetWeaponState("Reload");
+			        return;
+                }
+                Weapon_TakeAmmo(2);
                 A_AlertMonsters();
                 A_StartSound("SPAS12/Fire",1);
-                A_FireBullets(4,3,8,12,"KurojiBulletPuff",FBF_USEAMMO|FBF_NORANDOM,8192);
-                A_SetOffsetVariables(frandom(-2,2),frandom(-1,0));
+                A_FireBullets(4,3,6,12,"KurojiBulletPuff",FBF_NORANDOM,8192);
+                A_SetOffsetVariables(frandom(-1.5,1.5),frandom(-1,0));
             }
             SPSS BC 1 BRIGHT A_RandomWeaponOffset;
             SPSS DEFGHIJ 1;
@@ -58,7 +71,35 @@ class SPAS12 : KurojiWeapon{
             SPSP LKJI 2;
             SPSP HGFEDCBA 1;
             GoTo Ready;
+        Reload:
+            TNT1 A 0{
 
+                if(!invoker.owner.CountInv("Shell")){SetWeaponState("Ready"); return;}
+
+                if (invoker.WeaponMagCount == invoker.WeaponMagMax)
+                SetWeaponState("Ready");
+                return;
+            }
+            SPSP ABCDEFGHI 1;
+            SPSP I 2;
+        ReloadLoop:
+            TNT1 A 0 {if(!invoker.owner.CountInv("Shell")){SetWeaponState("ReloadDone"); return;}}
+            SPSR ABCDEFGH 1;
+            TNT1 A 0{
+                invoker.WeaponMagCount += 1;
+                invoker.owner.TakeInventory("Shell",1);
+            }
+            SPSR IJKL 1;
+            SPSP I 2;
+            TNT1 A 0 {
+                if(invoker.WeaponMagCount == invoker.WeaponMagMax){
+                    SetWeaponState("ReloadDone");
+                }
+            }
+            Loop;
+        ReloadDone:
+            SPSP HGFEDCBA 1;
+            GoTo Ready;
         Flash:
             TNT1 A 4 A_Light1;
             TNT1 A 3 A_Light2;

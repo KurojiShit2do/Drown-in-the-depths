@@ -23,6 +23,15 @@ class KurojiWeapon : Weapon {
 	    A_WeaponOffset(0,32,WOF_INTERPOLATE);
 	}
 
+    action void Weapon_TakeAmmo(int amount = 1) {
+		invoker.WeaponMagCount -= amount;
+	}
+
+    action void SetWeaponState(statelabel st,int layer=PSP_WEAPON)
+    {
+    if(player) player.setpsprite(layer,invoker.findstate(st));
+    }
+
     action void setup(int max){
         invoker.WeaponMagMax = max;
         invoker.WeaponMagCount = max;
@@ -57,7 +66,7 @@ class KurojiBulletPuff : BulletPuff {
                                     frandom(3,8),                           //Size
                                     0,                                      //Angle
                                     0,0,0,                                  //XYZ offset
-                                    0, frandom(-2,2), frandom(0,10),        //XYZ vel
+                                    frandom(-2,2), frandom(-2,2), frandom(0,10),        //XYZ vel
                                     0, 0, -1);
                 }
             }
