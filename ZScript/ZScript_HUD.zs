@@ -1,7 +1,11 @@
 class myStatusBar : BaseStatusBar
 {
 	int shownHp;
-	string HPPrecent;
+
+	string HPMonitor;
+	string HPBack;
+	string HPIcon;
+
 	int AmmoX;
 	int AmmoY;
 
@@ -35,9 +39,18 @@ class myStatusBar : BaseStatusBar
 
 		DrawString(bigFont, FormatNumber(health),(40,-24));
 		DrawString(bigFont, FormatNumber(my_armor),(40,-44));
-		DrawString(bigFont, FormatNumber(ammo.amount),(-42,-24), DI_TEXT_ALIGN_RIGHT );
 		
 		if (curWeap != null){
+			DrawString(bigFont, FormatNumber(ammo.amount),(-42,-24), DI_TEXT_ALIGN_RIGHT );
+
+			DrawImage("HP_YLOFF",(-46,-10),DI_MIRROR);
+			DrawImage("HUD_HYBG", (-24, -12));
+			DrawImage("HUD_m2", (-24, -12));
+	
+			DrawImage("HP_YLOFF",(-46,-30),DI_MIRROR);
+			DrawImage("HUD_HYBG", (-24, -32));
+			DrawImage("HUD_AM", (-24, -32));
+			
 			switch(curWeap.GetClassName())	{
 				case 'SPAS12':
 					for(int i = 0; i <8; i++){
@@ -58,30 +71,28 @@ class myStatusBar : BaseStatusBar
 		DrawImage("HUD_ARBG", (24, -32));
 		DrawImage("HUD_AR", (24, -32));
 		
-		HPPrecent = "HP_GLON";
+		HPMonitor = "HP_GLON";
+		HPIcon = "H_HPG";
+		HPBack = "HUD_HPBG";
 		if(health < 1){
-			HPPrecent = "HP_RLOFF";
+			HPMonitor = "HP_RLOFF";
+			HPIcon = "H_HPR";
+			HPBack = "HUD_HPBR";
 		} else if(health <= 25){
-			HPPrecent = "HP_RLON";
+			HPMonitor = "HP_RLON";
+			HPIcon = "H_HPR";
+			HPBack = "HUD_HPBR";
 		} else if(health <= 50){
-			HPPrecent = "HP_YLON";
+			HPMonitor = "HP_YLON";
+			HPIcon = "H_HPY";
+			HPBack = "HUD_HPBY";
 		}
 
-		DrawImage(HPPrecent, (46, -10));
-		DrawImage("HUD_HPBG", (24, -12));
-		DrawImage("HUD_HP", (24, -12));
+		DrawImage(HPMonitor, (46, -10));
+		DrawImage(HPBack, (24, -12));
+		DrawImage(HPIcon, (24, -12));
 		
 		DrawImage("HUD_OXY", (46,-50));
-
-		DrawImage("HP_YLOFF",(-46,-10),DI_MIRROR);
-		DrawImage("HUD_HYBG", (-24, -12));
-		DrawImage("HUD_m2", (-24, -12));
-
-		DrawImage("HP_YLOFF",(-46,-30),DI_MIRROR);
-		DrawImage("HUD_HYBG", (-24, -32));
-		DrawImage("HUD_AM", (-24, -32));
-
-
     }
 
 }
