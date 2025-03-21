@@ -1,2 +1,11 @@
-SPAS12/Fire "Sounds/SPAS12/fire.wav"
-SPAS12/Pump "Sounds/SPAS12/Pump.ogg"
+//WEAPONS
+
+Weapons/Select      "Sounds/select.ogg"
+Weapons/DeSelect    "Sounds/deselect.ogg"
+
+SPAS12/Fire		 "Sounds/SPAS12/fire.wav"
+SPAS12/Pump		 "Sounds/SPAS12/Pump.ogg"
+SPAS12/Load		 "Sounds/SPAS12/reload"
+
+SMG/Fire         "Sounds/SMG/fire.wav"
+SMG/FireLoop     "Sounds/SMG/fireloop.wav"

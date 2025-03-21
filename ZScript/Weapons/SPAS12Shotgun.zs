@@ -30,6 +30,7 @@ class SPAS12 : KurojiWeapon{
             SPSS  A 1 A_Raise(12);
             Wait;
         Deselect:
+            TNT1 A 0 A_StartSound("Weapons/DeSelect", 1, 0, 5.0);
             SPSS  A 1 A_Lower(12);
             Wait;
         
@@ -86,6 +87,7 @@ class SPAS12 : KurojiWeapon{
             TNT1 A 0 {if(!invoker.owner.CountInv("Shell")){SetWeaponState("ReloadDone"); return;}}
             SPSR ABCDEFGH 1;
             TNT1 A 0{
+                A_StartSound("SPAS12/Load",1);
                 invoker.WeaponMagCount += 1;
                 invoker.owner.TakeInventory("Shell",1);
             }

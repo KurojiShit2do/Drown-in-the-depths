@@ -41,6 +41,8 @@ class myStatusBar : BaseStatusBar
 		DrawString(bigFont, FormatNumber(my_armor),(40,-44));
 		
 		if (curWeap != null){
+
+			if(curWeap.GetClassName() != "Knife"){
 			DrawString(bigFont, FormatNumber(ammo.amount),(-42,-24), DI_TEXT_ALIGN_RIGHT );
 
 			DrawImage("HP_YLOFF",(-46,-10),DI_MIRROR);
@@ -50,13 +52,21 @@ class myStatusBar : BaseStatusBar
 			DrawImage("HP_YLOFF",(-46,-30),DI_MIRROR);
 			DrawImage("HUD_HYBG", (-24, -32));
 			DrawImage("HUD_AM", (-24, -32));
+			}
 			
 			switch(curWeap.GetClassName())	{
 				case 'SPAS12':
-					for(int i = 0; i <8; i++){
+					for(int i = 0; i < curWeap.WeaponMagMax; i++){
 						DrawImage("HUD_SHL", (-78+AmmoX, -35),0,1,(-1,-1),(0.75,1));
 						if(i >= curWeap.WeaponMagCount){DrawImage("HUD_NSH", (-78+AmmoX, -35),0,1,(-1,-1),(0.75,1));}
 						AmmoX += 5;
+					}
+					break;
+				case 'SMG':
+					for(int i = 0; i < curWeap.WeaponMagMax; i++){
+						DrawImage("HUD_BLL", (-100+AmmoX, -35),0,1,(-1,-1),(0.75,1));
+						if(i >= curWeap.WeaponMagCount){DrawImage("HUD_NBL", (-100+AmmoX, -35),0,1,(-1,-1),(1,1));}
+						AmmoX += 2;
 					}
 					break;
 			}

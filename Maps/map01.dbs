@@ -20,7 +20,7 @@ maps
 			resource0
 			{
 				type = 1;
-				location = "F:\\Doom Gaming\\Mods\\Mods\\SelfMade bullshit\\Drown In The Depths\\Drown-in-the-depths";
+				location = "F:\\Doom Gaming\\Mods\\SelfMade bullshit\\Drown-in-the-depths";
 				option1 = 0;
 				option2 = 0;
 				notfortesting = 0;
@@ -30,15 +30,15 @@ maps
 			resource1
 			{
 				type = 0;
-				location = "F:\\Doom Gaming\\Mods\\WADs\\OTEX_1.1.WAD";
+				location = "F:\\Doom Gaming\\WADs\\OTEX_1.1.WAD";
 				option1 = 0;
 				option2 = 0;
 				notfortesting = 0;
 				requiredarchives = "";
 			}
 		}
-		viewpositiony = 160.2216f;
-		viewpositionx = -373.4508f;
+		viewpositiony = -90.63708f;
+		viewpositionx = -139.5586f;
 		
 		testprecommand
 		{
@@ -62,7 +62,7 @@ maps
 			background = "";
 			backoffsety = 0;
 		}
-		viewscale = 2.056356f;
+		viewscale = 1.581812f;
 		
 		reloadresourceprecommand
 		{
@@ -93,6 +93,39 @@ maps
 			autocloseonsuccess = true;
 			exitcodeiserror = true;
 			stderriserror = true;
+		}
+		
+		fieldtypes
+		{
+			
+			sector
+			{
+				user_managed_3d_floor = 3;
+			}
+		}
+		
+		scriptdocuments
+		{
+			
+			document0
+			{
+				filename = "DIALOGUE";
+				hash = 3588187714;
+				resource;
+				tabtype = 0;
+				scripttype = 18;
+			}
+			
+			document1
+			{
+				filename = "SCRIPTS";
+				hash = 3469170009;
+				resource;
+				tabtype = 0;
+				scripttype = 1;
+				caretposition = 109;
+				activetab = true;
+			}
 		}
 	}
 }

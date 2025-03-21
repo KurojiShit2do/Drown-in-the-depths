@@ -36,6 +36,26 @@ class KurojiWeapon : Weapon {
         invoker.WeaponMagMax = max;
         invoker.WeaponMagCount = max;
     }
+
+    action void KurojiReload(int rounds = 0)
+    {
+    Inventory playerAmmo = FindInventory(invoker.ammoType1);
+    if (playerAmmo)
+        {
+        if (rounds <= 0)
+            {
+            rounds = invoker.WeaponMagMax - invoker.WeaponMagCount - rounds;
+            }
+
+        int tradeAmt = Min(rounds, playerAmmo.amount);
+
+        invoker.WeaponMagCount += tradeAmt;
+		if(sv_infiniteammo)
+			{ }
+		else
+        	playerAmmo.amount -= tradeAmt;
+        }
+    }
 }
 
 class KurojiBulletPuff : BulletPuff {
@@ -57,7 +77,7 @@ class KurojiBulletPuff : BulletPuff {
 	}
 	States {
         Spawn:
-            PUFF A 4 Bright;
+            TNT1 A 4 Bright;
             TNT1 A 0 {
                 for(int i = 0; i < 5; i++){
                     A_SpawnParticle(PuffColor[random(0,8)],                 //Color
@@ -70,7 +90,44 @@ class KurojiBulletPuff : BulletPuff {
                                     0, 0, -1);
                 }
             }
-            PUFF B 4;
+            TNT1 A 4;
+            Stop;
+	}
+}
+
+class KurojiBulletPuffPurple : BulletPuff {
+    static const string PuffColor[] = {
+        "FFFFFF",
+        "B9B9B9",
+        "939393",
+        "818181",
+        "5F5F5F",
+        "474747",
+        "373737",
+        "ff00bb",
+        "ff008a"
+    };
+    Default {
+		Alpha 1;
+		VSpeed 0;
+        Scale 0.25;
+	}
+	States {
+        Spawn:
+            TNT1 A 4 Bright;
+            TNT1 A 0 {
+                for(int i = 0; i < 5; i++){
+                    A_SpawnParticle(PuffColor[random(0,8)],                 //Color
+                                    SPF_FULLBRIGHT,                         //Flags
+                                    random(5,15),                           //Lifetime
+                                    frandom(3,8),                           //Size
+                                    0,                                      //Angle
+                                    0,0,0,                                  //XYZ offset
+                                    frandom(-2,2), frandom(-2,2), frandom(0,10),        //XYZ vel
+                                    0, 0, -1);
+                }
+            }
+            TNT1 A 4;
             Stop;
 	}
 }

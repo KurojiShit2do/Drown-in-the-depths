@@ -5,7 +5,7 @@ class Knife : KurojiWeapon{
         Weapon.AmmoType "Shell";
         Weapon.SlotNumber 1;
         Weapon.SlotPriority 5;
-        Tag "Tactical \cDQ-50B knife\c-";
+        Tag "Tactical \c[s8]DQ-50B knife\c-";
 
         +Weapon.noautofire
         +Weapon.AMMO_OPTIONAL
@@ -19,10 +19,11 @@ class Knife : KurojiWeapon{
             KNIF  A 1 A_WeaponReady(WRF_ALLOWRELOAD);
             Loop;
         Select:
-            KNIF  A 1 A_Raise(12);
+            KNIF A 1 A_Raise(12);
             Wait;
         Deselect:
-            KNIF  A 1 A_Lower(12);
+            TNT1 A 0 A_StartSound("Weapons/DeSelect", 1, 0, 5.0);
+            KNIF A 1 A_Lower(12);
             Wait;
         Fire:
             KNI2 ABDE 1;
