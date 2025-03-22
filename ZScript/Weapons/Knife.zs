@@ -28,15 +28,18 @@ class Knife : KurojiWeapon{
         Fire:
             KNI2 ABDE 1;
         Swing:
-            KNIF BCDEFGIJKLMNO 1;
+            TNT1 A 0 A_OverlayRotate(1, frandom(-6,6));
+            KNIF BCDFGIKLMO 1;
             TNT1 A 2;
             TNT1 A 2 A_ReFire("Swing2");
             GoTo SwingDone;
         Swing2:
-            KNF2 BCDEFGIJLMO 1;
+            TNT1 A 0 A_OverlayRotate(1, frandom(-10,10));
+            KNF2 BCDFGILMO 1;
             TNT1 A 2;
             TNT1 A 2 A_ReFire("Swing");
         SwingDone:
+            TNT1 A 0 A_OverlayRotate(1, 0);
             KNI2 EDBA 1;
             GoTo Ready;
     }

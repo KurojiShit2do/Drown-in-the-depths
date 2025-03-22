@@ -46,8 +46,9 @@ class SMG : KurojiWeapon {
             }
             SMGA BC 1 BRIGHT A_RandomWeaponOffset(frandom(-3,3),frandom(-3,3));
             SMGA D 1 A_WeaponOffsetReset;
-            SMGA E 1 A_ReFire("FireLoop");
+            SMGA E 1;
             SMGA F 1;
+            TNT1 A 0 A_ReFire("FireLoop");
             GoTo Ready;
         FireLoop:
             TNT1 A 0 {
@@ -62,8 +63,10 @@ class SMG : KurojiWeapon {
             }
             SMGA BC 1 BRIGHT A_RandomWeaponOffset(frandom(-3,3),frandom(-3,3));
             SMGA D 1 A_WeaponOffsetReset;
-            SMGA E 1 A_ReFire("FireLoop");
-            SMGA FA 1 A_StopSound(1);
+            SMGA E 1;
+            SMGA F 1;
+            TNT1 A 0 A_ReFire("FireLoop");
+            TNT1 A 0 A_StopSound(1);
             GoTo Ready;
         Reload:
             TNT1 A 0{

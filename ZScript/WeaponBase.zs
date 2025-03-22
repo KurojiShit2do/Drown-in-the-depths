@@ -67,8 +67,12 @@ class KurojiBulletPuff : BulletPuff {
         "5F5F5F",
         "474747",
         "373737",
+
         "FFF300",
-        "FFB900"
+        "dae400",
+        "c9d300",
+        "b7bf00",
+        "abb200"
     };
     Default {
 		Alpha 1;
@@ -79,15 +83,16 @@ class KurojiBulletPuff : BulletPuff {
         Spawn:
             TNT1 A 4 Bright;
             TNT1 A 0 {
-                for(int i = 0; i < 5; i++){
-                    A_SpawnParticle(PuffColor[random(0,8)],                 //Color
+                A_SpawnParticle(PuffColor[7],SPF_FULLBRIGHT,25,frandom(8,13));
+                for(int i = 0; i < 8; i++){
+                    A_SpawnParticle(PuffColor[random(0,11)],                 //Color
                                     SPF_FULLBRIGHT,                         //Flags
-                                    random(5,15),                           //Lifetime
-                                    frandom(3,8),                           //Size
+                                    random(5,10),                           //Lifetime
+                                    frandom(5,8),                           //Size
                                     0,                                      //Angle
                                     0,0,0,                                  //XYZ offset
-                                    frandom(-2,2), frandom(-2,2), frandom(0,10),        //XYZ vel
-                                    0, 0, -1);
+                                    frandom(-4,4), frandom(-4,4), frandom(0,10),        //XYZ vel
+                                    0, 0, -2);
                 }
             }
             TNT1 A 4;
@@ -104,8 +109,12 @@ class KurojiBulletPuffPurple : BulletPuff {
         "5F5F5F",
         "474747",
         "373737",
-        "ff00bb",
-        "ff008a"
+
+        "ff0000",
+        "ff4141",
+        "ff7979",
+        "ca0000",
+        "dd0000"
     };
     Default {
 		Alpha 1;
@@ -116,15 +125,16 @@ class KurojiBulletPuffPurple : BulletPuff {
         Spawn:
             TNT1 A 4 Bright;
             TNT1 A 0 {
-                for(int i = 0; i < 5; i++){
-                    A_SpawnParticle(PuffColor[random(0,8)],                 //Color
+                A_SpawnParticle(PuffColor[7],SPF_FULLBRIGHT,25,frandom(8,13));
+                for(int i = 0; i < 8; i++){
+                    A_SpawnParticle(PuffColor[random(0,11)],                 //Color
                                     SPF_FULLBRIGHT,                         //Flags
-                                    random(5,15),                           //Lifetime
-                                    frandom(3,8),                           //Size
+                                    random(5,10),                           //Lifetime
+                                    frandom(5,8),                           //Size
                                     0,                                      //Angle
                                     0,0,0,                                  //XYZ offset
-                                    frandom(-2,2), frandom(-2,2), frandom(0,10),        //XYZ vel
-                                    0, 0, -1);
+                                    frandom(-4,4), frandom(-4,4), frandom(0,10),        //XYZ vel
+                                    0, 0, -2);
                 }
             }
             TNT1 A 4;

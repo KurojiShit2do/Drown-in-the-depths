@@ -9,3 +9,10 @@ SPAS12/Load		 "Sounds/SPAS12/reload"
 
 SMG/Fire         "Sounds/SMG/fire.wav"
 SMG/FireLoop     "Sounds/SMG/fireloop.wav"
+
+$random Plasma/Fire { Plasma/Fire1 Plasma/Fire2 Plasma/Fire3 Plasma/Fire4 Plasma/Fire5 }
+Plasma/Fire1    "Sounds/Plasma/Plashit1.ogg"
+Plasma/Fire2    "Sounds/Plasma/Plashit2.ogg"
+Plasma/Fire3    "Sounds/Plasma/Plashit3.ogg"
+Plasma/Fire4    "Sounds/Plasma/Plashit4.ogg"
+Plasma/Fire5    "Sounds/Plasma/Plashit5.ogg"
