@@ -1,4 +1,16 @@
 GameInfo{
 	StatusBarClass = "myStatusBar"
 	AddEventHandlers = "SwayHandler"
+	PlayerClasses = "DrownedPlayer"
+}
+
+map MAP01 "UAC Base rig" {
+	levelnum = 1
+	next = MAP02
+	secretnext = MAP02
+	sky1 = "OSKY01"
+	cluster = 5
+	par = 0
+	music = "M_HUB"
+	AirSupply = 999999999999999999
 }

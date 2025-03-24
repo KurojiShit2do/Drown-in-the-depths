@@ -32,7 +32,7 @@ class ElectricRifle : KurojiWeapon{
             TNT1 A 0 {
                 A_AlertMonsters();
                 A_StartSound("Plasma/Fire",1);
-                A_FireProjectile("ElectricBall", frandom(-2,2), 0, 0, 0, 0, frandom(-2,2));
+                A_FireProjectile("ElectricBall", frandom(-2,2), 0, 0, 0, FPF_AIMATANGLE , frandom(-2,2));
                 //A_FireBullets(4,3,1,12,"KurojiBulletPuffPurple",FBF_NORANDOM,8192);
             }
             PLSM BC 1 BRIGHT A_RandomWeaponOffset(frandom(-2,2),frandom(-2,2));

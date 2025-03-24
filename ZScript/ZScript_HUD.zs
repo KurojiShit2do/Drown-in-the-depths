@@ -30,15 +30,20 @@ class myStatusBar : BaseStatusBar
 
 		AmmoX = 0;
 		AmmoY = 0;
+
+		let KuroPlayer = DrownedPlayer(cplayer.mo);
 		
 		int health = CPlayer.mo.health;
 		int my_armor = GetArmorAmount();
+		int my_air = KuroPlayer.KAir;
 		inventory ammo = GetCurrentAmmo();
 
+		
 		let curWeap = KurojiWeapon(cplayer.ReadyWeapon);
 
 		DrawString(bigFont, FormatNumber(health),(40,-24));
 		DrawString(bigFont, FormatNumber(my_armor),(40,-44));
+		DrawString(bigFont, FormatNumber(my_air),(40,-64));
 		
 		if (curWeap != null){
 
