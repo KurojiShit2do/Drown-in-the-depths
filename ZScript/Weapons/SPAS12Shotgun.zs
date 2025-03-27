@@ -43,7 +43,7 @@ class SPAS12 : KurojiWeapon{
                 Weapon_TakeAmmo();
                 A_AlertMonsters();
                 A_StartSound("SPAS12/Fire",1);
-                A_FireBullets(4,3,6,12,"KurojiBulletPuff",FBF_NORANDOM,8192);
+                A_FireBullets(4,3,7,9,"KurojiBulletPuff",FBF_NORANDOM,8192);
                 A_SetOffsetVariables(frandom(-1.5,1.5),frandom(-1,0));
             }
             SPSS BC 1 BRIGHT A_RandomWeaponOffset;
@@ -57,10 +57,10 @@ class SPAS12 : KurojiWeapon{
                     SetWeaponState("Reload");
 			        return;
                 }
-                Weapon_TakeAmmo(2);
+                Weapon_TakeAmmo();
                 A_AlertMonsters();
                 A_StartSound("SPAS12/Fire",1);
-                A_FireBullets(4,3,6,12,"KurojiBulletPuff",FBF_NORANDOM,8192);
+                A_FireBullets(4,3,7,9,"KurojiBulletPuff",FBF_NORANDOM,8192);
                 A_SetOffsetVariables(frandom(-1.5,1.5),frandom(-1,0));
             }
             SPSS BC 1 BRIGHT A_RandomWeaponOffset;

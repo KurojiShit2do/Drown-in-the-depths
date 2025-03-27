@@ -213,7 +213,7 @@ maps
 				requiredarchives = "";
 			}
 		}
-		defaultfloortexture = "ODIAGA02";
+		defaultfloortexture = "OHEXAA02";
 		defaultceiltexture = "OCONCP02";
 		defaulttoptexture = "OCONCE11";
 		defaultwalltexture = "OCONCE11";
@@ -230,9 +230,9 @@ maps
 		overrideceilheight = false;
 		overridebrightness = false;
 		uselongtexturenames = false;
-		viewpositionx = 404.5006f;
-		viewpositiony = 22.41285f;
-		viewscale = 4.078643f;
+		viewpositionx = -2.019934f;
+		viewpositiony = 1283.089f;
+		viewscale = 1.42804f;
 		scriptcompiler = "zdoom_acs.cfg";
 		
 		grid
@@ -243,7 +243,7 @@ maps
 			backoffsety = 0;
 			backscalex = 100;
 			backscaley = 100;
-			gridsize = 8;
+			gridsize = 32;
 			gridrotate = 0;
 			gridoriginx = 0;
 			gridoriginy = 0;
@@ -286,10 +286,52 @@ maps
 				controlsectorarea
 				{
 					usecustomtagrange = false;
-					outerleft = -1088;
-					outerright = -576;
+					outerleft = -1536;
+					outerright = -1088;
 					outertop = 768;
 					outerbottom = -4096;
+				}
+			}
+			
+			stairsectorbuilder
+			{
+				
+				prefabs
+				{
+					
+					prefab1
+					{
+						name = "[Previous]";
+						numberofsectors = 9;
+						outervertexmultiplier = 1;
+						innervertexmultiplier = 1;
+						stairtype = 0;
+						sectordepth = 32;
+						spacing = 0;
+						frontside = true;
+						singlesectors = false;
+						distinctsectors = false;
+						singledirection = false;
+						distinctbaseheights = false;
+						flipping = 0;
+						numberofcontrolpoints = 1;
+						applyfloormod = true;
+						floormod = 8;
+						applyceilingmod = true;
+						ceilingmod = 0;
+						applyfloortexture = true;
+						floortexture = "OBKMTA06";
+						applyceilingtexture = false;
+						ceilingtexture = "";
+						applyuppertexture = true;
+						uppertexture = "-";
+						upperunpegged = true;
+						applymiddletexture = false;
+						middletexture = "-";
+						applylowertexture = true;
+						lowertexture = "-";
+						lowerunpegged = true;
+					}
 				}
 			}
 		}

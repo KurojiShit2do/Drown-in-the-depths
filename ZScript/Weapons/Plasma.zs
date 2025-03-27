@@ -60,7 +60,7 @@ Class ElectricBall : Actor{
         Radius 13;
 		Height 8;
 		Speed 125;
- 		Damage 5;
+ 		Damage 2;
 		Projectile;
 		+RANDOMIZE
 		+ZDOOMTRANS

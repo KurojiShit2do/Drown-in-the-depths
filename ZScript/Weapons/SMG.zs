@@ -42,7 +42,7 @@ class SMG : KurojiWeapon {
                 Weapon_TakeAmmo();
                 A_AlertMonsters();
                 A_StartSound("SMG/Fire",1);
-                A_FireBullets(4,3,1,12,"KurojiBulletPuffPurple",FBF_NORANDOM,8192);
+                A_FireBullets(4,3,1,16,"KurojiBulletPuffPurple",FBF_NORANDOM,8192);
             }
             SMGA BC 1 BRIGHT A_RandomWeaponOffset(frandom(-3,3),frandom(-3,3));
             SMGA D 1 A_WeaponOffsetReset;
@@ -59,7 +59,7 @@ class SMG : KurojiWeapon {
                 Weapon_TakeAmmo();
                 A_AlertMonsters();
                 A_StartSound("SMG/FireLoop",1,CHANF_LOOPING );
-                A_FireBullets(4,3,1,12,"KurojiBulletPuffPurple",FBF_NORANDOM,8192);
+                A_FireBullets(4,3,1,16,"KurojiBulletPuffPurple",FBF_NORANDOM,8192);
             }
             SMGA BC 1 BRIGHT A_RandomWeaponOffset(frandom(-3,3),frandom(-3,3));
             SMGA D 1 A_WeaponOffsetReset;
