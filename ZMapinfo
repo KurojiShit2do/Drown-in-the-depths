@@ -14,3 +14,14 @@ map MAP01 "UAC Base rig" {
 	music = "M_HUB"
 	AirSupply = 999999999999999999
 }
+
+map MAP02 "Drown in the depths" {
+	levelnum = 1
+	next = MAP01
+	secretnext = MAP01
+	sky1 = "OSKY01"
+	cluster = 5
+	par = 0
+	music = "M_TENS"
+	AirSupply = 999999999999999999
+}

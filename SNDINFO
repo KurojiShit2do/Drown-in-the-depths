@@ -16,3 +16,7 @@ Plasma/Fire2    "Sounds/Plasma/Plashit2.ogg"
 Plasma/Fire3    "Sounds/Plasma/Plashit3.ogg"
 Plasma/Fire4    "Sounds/Plasma/Plashit4.ogg"
 Plasma/Fire5    "Sounds/Plasma/Plashit5.ogg"
+
+//Player
+
+Oxygen/Beep     "Sounds/BEP.OGG"

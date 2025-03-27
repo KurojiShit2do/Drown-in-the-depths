@@ -24,7 +24,6 @@ maps
 				option1 = 0;
 				option2 = 0;
 				notfortesting = 0;
-				requiredarchives = "";
 			}
 			
 			resource1
@@ -37,8 +36,8 @@ maps
 				requiredarchives = "";
 			}
 		}
-		viewpositiony = 253.925f;
-		viewpositionx = 369.1783f;
+		viewpositiony = 505.7603f;
+		viewpositionx = 121.3381f;
 		
 		testprecommand
 		{
@@ -58,11 +57,11 @@ maps
 			gridrotate = 0;
 			backscalex = 100;
 			gridoriginx = 0;
-			gridsize = 4;
+			gridsize = 16;
 			background = "";
 			backoffsety = 0;
 		}
-		viewscale = 1.58181f;
+		viewscale = 0.9359796f;
 		
 		reloadresourceprecommand
 		{
@@ -124,11 +123,11 @@ maps
 						outervertexmultiplier = 1;
 						innervertexmultiplier = 1;
 						stairtype = 0;
-						sectordepth = 32;
+						sectordepth = 8;
 						spacing = 0;
 						frontside = true;
 						singlesectors = true;
-						distinctsectors = true;
+						distinctsectors = false;
 						singledirection = false;
 						distinctbaseheights = true;
 						flipping = 0;
@@ -184,6 +183,123 @@ maps
 				scripttype = 1;
 				caretposition = 39;
 				activetab = true;
+			}
+		}
+	}
+	
+	MAP02
+	{
+		
+		resources
+		{
+			
+			resource0
+			{
+				type = 1;
+				location = "F:\\Doom Gaming\\Mods\\SelfMade bullshit\\Drown-in-the-depths";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+				requiredarchives = "";
+			}
+			
+			resource1
+			{
+				type = 0;
+				location = "F:\\Doom Gaming\\WADs\\OTEX_1.1.WAD";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+				requiredarchives = "";
+			}
+		}
+		defaultfloortexture = "ODIAGA02";
+		defaultceiltexture = "OCONCP02";
+		defaulttoptexture = "OCONCE11";
+		defaultwalltexture = "OCONCE11";
+		defaultbottomtexture = "OCONCE11";
+		custombrightness = 196;
+		customfloorheight = 0;
+		customceilheight = 128;
+		overridefloortexture = false;
+		overrideceiltexture = false;
+		overridetoptexture = false;
+		overridemiddletexture = false;
+		overridebottomtexture = false;
+		overridefloorheight = false;
+		overrideceilheight = false;
+		overridebrightness = false;
+		uselongtexturenames = false;
+		viewpositionx = 264.8903f;
+		viewpositiony = 118.6919f;
+		viewscale = 1.428047f;
+		scriptcompiler = "zdoom_acs.cfg";
+		
+		grid
+		{
+			background = "";
+			backsource = 0;
+			backoffsetx = 0;
+			backoffsety = 0;
+			backscalex = 100;
+			backscaley = 100;
+			gridsize = 8;
+			gridrotate = 0;
+			gridoriginx = 0;
+			gridoriginy = 0;
+		}
+		
+		reloadresourceprecommand
+		{
+			autocloseonsuccess = true;
+			exitcodeiserror = true;
+			stderriserror = true;
+		}
+		
+		reloadresourcepostcommand
+		{
+			autocloseonsuccess = true;
+			exitcodeiserror = true;
+			stderriserror = true;
+		}
+		
+		testprecommand
+		{
+			autocloseonsuccess = true;
+			exitcodeiserror = true;
+			stderriserror = true;
+		}
+		
+		testpostcommand
+		{
+			autocloseonsuccess = true;
+			exitcodeiserror = true;
+			stderriserror = true;
+		}
+		
+		plugins
+		{
+			
+			threedfloormode
+			{
+				
+				controlsectorarea
+				{
+					usecustomtagrange = false;
+					outerleft = -1088;
+					outerright = -576;
+					outertop = 768;
+					outerbottom = -4096;
+				}
+			}
+		}
+		
+		fieldtypes
+		{
+			
+			sector
+			{
+				user_managed_3d_floor = 3;
 			}
 		}
 	}

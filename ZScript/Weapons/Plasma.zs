@@ -64,6 +64,7 @@ Class ElectricBall : Actor{
 		Projectile;
 		+RANDOMIZE
 		+ZDOOMTRANS
+        +NOGRAVITY
 		RenderStyle "Add";
 		Alpha 1;
     }
