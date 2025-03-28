@@ -53,24 +53,24 @@ class SPAS12 : KurojiWeapon{
 
         AltFire:
             TNT1 A 0 {
-                if(invoker.WeaponMagCount <= 1){
+                if(invoker.WeaponMagCount <= 0){
                     SetWeaponState("Reload");
 			        return;
                 }
                 Weapon_TakeAmmo();
                 A_AlertMonsters();
                 A_StartSound("SPAS12/Fire",1);
-                A_FireBullets(4,3,7,9,"KurojiBulletPuff",FBF_NORANDOM,8192);
+                A_FireBullets(2,2,8,9,"KurojiBulletPuff",FBF_NORANDOM,8192);
                 A_SetOffsetVariables(frandom(-1.5,1.5),frandom(-1,0));
             }
             SPSS BC 1 BRIGHT A_RandomWeaponOffset;
             SPSS DEFGHIJ 1;
-            SPSP ABCDEFGH 1 A_WeaponOffsetReset;
-            SPSP IJ 2;
+            SPSP BDFGHE 1 A_WeaponOffsetReset;
+            SPSP IJ 1;
             TNT1 A 0 A_StartSound("SPAS12/Pump",1);
-            SPSP KL 2;
+            SPSP KL 1;
             SPSP LKJI 2;
-            SPSP HGFEDCBA 1;
+            SPSP HGFEDB 1;
             GoTo Ready;
         Reload:
             TNT1 A 0{
@@ -82,17 +82,15 @@ class SPAS12 : KurojiWeapon{
                 return;
             }
             SPSP ABCDEFGHI 1;
-            SPSP I 2;
         ReloadLoop:
             TNT1 A 0 {if(!invoker.owner.CountInv("Shell")){SetWeaponState("ReloadDone"); return;}}
-            SPSR ABCDEFGH 1;
+            SPSR ABCEGH 1;
             TNT1 A 0{
                 A_StartSound("SPAS12/Load",1);
                 invoker.WeaponMagCount += 1;
                 invoker.owner.TakeInventory("Shell",1);
             }
             SPSR IJKL 1;
-            SPSP I 2;
             TNT1 A 0 {
                 if(invoker.WeaponMagCount == invoker.WeaponMagMax){
                     SetWeaponState("ReloadDone");
