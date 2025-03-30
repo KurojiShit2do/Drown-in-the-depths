@@ -7,8 +7,8 @@ class SMG : KurojiWeapon {
         Weapon.AmmoType "Clip";
         Weapon.AmmoUse 1;
         Weapon.AmmoGive 30;
-        Inventory.PickupMessage "You got the \c[r8]SMG\c-!";
-        Tag "SMG";
+        Inventory.PickupMessage "You got the \c[r8]RIF\c-!";
+        Tag "\c[k8]LG-48\c- Rifle";
 
         +Weapon.AMMO_OPTIONAL
     }
@@ -19,18 +19,18 @@ class SMG : KurojiWeapon {
             Stop;
         
         NoAmmo:
-            SMGA A 10 A_StopSound(1);
+            RIFA A 10 A_StopSound(1);
             GoTo Ready;
         Ready:
-            SMGA  A 1 A_WeaponReady(WRF_ALLOWRELOAD);
+            RIFA  A 1 A_WeaponReady(WRF_ALLOWRELOAD);
             Loop;
         Select:
             TNT1 A 0 A_StartSound("Weapons/Select",1);
-            SMGA  A 1 A_Raise(12);
+            RIFA  A 1 A_Raise(12);
             Wait;
         Deselect:
             TNT1 A 0 A_StartSound("Weapons/DeSelect",1);
-            SMGA  A 1 A_Lower(12);
+            RIFA  A 1 A_Lower(12);
             Wait;
 
         Fire:
@@ -42,12 +42,13 @@ class SMG : KurojiWeapon {
                 Weapon_TakeAmmo();
                 A_AlertMonsters();
                 A_StartSound("SMG/Fire",1);
+                A_FireCustomMissile("RifCaseSpawn",0,0,2,-2);
                 A_FireBullets(4,3,1,16,"KurojiBulletPuffPurple",FBF_NORANDOM,8192);
             }
-            SMGA BC 1 BRIGHT A_RandomWeaponOffset(frandom(-3,3),frandom(-3,3));
-            SMGA D 1 A_WeaponOffsetReset;
-            SMGA E 1;
-            SMGA F 1;
+            RIFA BC 1 BRIGHT A_RandomWeaponOffset(frandom(-3,3),frandom(-3,3));
+            RIFA D 1 A_WeaponOffsetReset;
+            RIFA E 1;
+            RIFA F 1;
             TNT1 A 0 A_ReFire("FireLoop");
             GoTo Ready;
         FireLoop:
@@ -58,15 +59,16 @@ class SMG : KurojiWeapon {
                 }
                 Weapon_TakeAmmo();
                 A_AlertMonsters();
+                A_FireCustomMissile("RifCaseSpawn",0,0,2,-2);
                 A_StartSound("SMG/FireLoop",1,CHANF_LOOPING );
                 A_FireBullets(4,3,1,16,"KurojiBulletPuffPurple",FBF_NORANDOM,8192);
             }
-            SMGA BC 1 BRIGHT A_RandomWeaponOffset(frandom(-3,3),frandom(-3,3));
-            SMGA D 1 A_WeaponOffsetReset;
-            SMGA E 1;
-            SMGA F 1;
+            RIFA BC 1 BRIGHT A_RandomWeaponOffset(frandom(-3,3),frandom(-3,3));
+            RIFA D 1 A_WeaponOffsetReset;
+            RIFA E 1;
+            RIFA F 1;
             TNT1 A 0 A_ReFire("FireLoop");
-            TNT1 A 0 A_StopSound(1);
+            TNT1 A 0 A_StartSound("SMG/Fire",1);
             GoTo Ready;
         Reload:
             TNT1 A 0{
@@ -77,11 +79,11 @@ class SMG : KurojiWeapon {
                 SetWeaponState("Ready");
                 return;
             }
-            SMGA A 1 A_StartSound("Weapons/DeSelect",1);
-            SMGR ABCDEF 1 A_RandomWeaponOffset(frandom(-1,1),frandom(-1,1));
-            SMGR G 10 {KurojiReload(); A_WeaponOffsetReset;}
-            SMGR FEDCBA 1;
-            SMGA A 2;
+            RIFA A 1 A_StartSound("Weapons/DeSelect",1);
+            RIFR ABCDEF 1 A_RandomWeaponOffset(frandom(-1,1),frandom(-1,1));
+            RIFR G 10 {KurojiReload(); A_WeaponOffsetReset;}
+            RIFR FEDCBA 1;
+            RIFA A 2;
             GoTo Ready;
     }
 }

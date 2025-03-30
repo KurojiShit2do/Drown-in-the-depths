@@ -1,6 +1,6 @@
 GameInfo{
 	StatusBarClass = "myStatusBar"
-	AddEventHandlers = "SwayHandler"
+	//AddEventHandlers = "SwayHandler"
 	PlayerClasses = "DrownedPlayer"
 }
 

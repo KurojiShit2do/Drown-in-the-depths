@@ -9,7 +9,7 @@ class SPAS12 : KurojiWeapon{
         Weapon.AmmoUse 1;
         Weapon.AmmoGive 8;
         Inventory.PickupMessage "You got the \cfAuto Raper\c-!";
-        Tag "SPAS12";
+        Tag "\c[z1] MZ\c- 12 Gauge Shotgun";
 
         +Weapon.noautofire
         +Weapon.AMMO_OPTIONAL

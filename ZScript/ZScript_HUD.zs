@@ -47,7 +47,8 @@ class myStatusBar : BaseStatusBar
 		
 		if (curWeap != null){
 
-			if(curWeap.GetClassName() != "Knife"){
+			if(curWeap.GetClassName() != "Knife" && curWeap.TempWep != true){
+
 			DrawString(bigFont, FormatNumber(ammo.amount),(-42,-24), DI_TEXT_ALIGN_RIGHT );
 
 			DrawImage("HP_YLOFF",(-46,-10),DI_MIRROR);

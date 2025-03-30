@@ -1,0 +1,45 @@
+Sprite "SMGAA0", 320, 400
+{
+	XScale 1.200
+	YScale 1.200
+	Offset -32, -32
+	Patch "SMG1", -5, 5
+}
+
+Sprite "SMGAB0", 320, 400
+{
+	XScale 1.150
+	YScale 1.150
+	Offset -24, -28
+	Patch "SMG3", -5, 10
+}
+
+Sprite "SMGAC0", 320, 400
+{
+	Offset 0, -13
+	Patch "SMG2", -5, 12
+}
+
+Sprite "SMGAD0", 320, 400
+{
+	XScale 1.110
+	YScale 1.110
+	Offset -18, -22
+	Patch "SMG1", -5, 17
+}
+
+Sprite "SMGAE0", 320, 400
+{
+	XScale 1.150
+	YScale 1.150
+	Offset -25, -27
+	Patch "SMG1", -5, 14
+}
+
+Sprite "SMGAF0", 320, 400
+{
+	XScale 1.200
+	YScale 1.200
+	Offset -32, -32
+	Patch "SMG1", -5, 10
+}

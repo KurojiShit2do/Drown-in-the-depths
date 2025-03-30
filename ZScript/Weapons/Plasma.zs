@@ -8,7 +8,7 @@ class ElectricRifle : KurojiWeapon{
         Weapon.AmmoUse 1;
         Weapon.AmmoGive 8;
         Inventory.PickupMessage "You got the \cfAuto Raper\c-!";
-        Tag "\c[k1]OarFish\c- Prime Rifle";
+        Tag "\c[l5]OarFish\c- Prime Rifle";
 
         +Weapon.AMMO_OPTIONAL
     }

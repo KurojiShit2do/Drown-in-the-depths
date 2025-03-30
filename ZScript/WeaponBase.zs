@@ -5,6 +5,11 @@ class KurojiWeapon : Weapon {
 
     int WeaponMagMax;
     int WeaponMagCount;
+    bool TempWep;
+
+
+    property TemparyWeapon: TempWep;
+    property MagazineCount: WeaponMagCount;
     property MagazineSize: WeaponMagMax;
 
     action void A_SetOffsetVariables(float xfloat, float yfloat) {

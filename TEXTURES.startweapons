@@ -492,12 +492,12 @@ Sprite "KNF2O0", 720, 420
 	Patch "KN4", 512, 306
 }
 
-Sprite "SMGAA0", 320, 400
+Sprite "RIFAA0", 320, 400
 {
 	Patch "RIFL1", -10, -11
 }
 
-Sprite "SMGAB0", 320, 400
+Sprite "RIFAB0", 320, 400
 {
 	XScale 0.900
 	YScale 0.900
@@ -505,7 +505,7 @@ Sprite "SMGAB0", 320, 400
 	Patch "RIFL2", -10, -6
 }
 
-Sprite "SMGAC0", 320, 400
+Sprite "RIFAC0", 320, 400
 {
 	XScale 0.925
 	YScale 0.925
@@ -513,7 +513,7 @@ Sprite "SMGAC0", 320, 400
 	Patch "RIFL3", -10, -4
 }
 
-Sprite "SMGAD0", 320, 400
+Sprite "RIFAD0", 320, 400
 {
 	XScale 0.950
 	YScale 0.950
@@ -521,7 +521,7 @@ Sprite "SMGAD0", 320, 400
 	Patch "RIFL3", -10, 1
 }
 
-Sprite "SMGAE0", 320, 400
+Sprite "RIFAE0", 320, 400
 {
 	XScale 0.975
 	YScale 0.975
@@ -529,45 +529,45 @@ Sprite "SMGAE0", 320, 400
 	Patch "RIFL4", -10, -2
 }
 
-Sprite "SMGAF0", 320, 400
+Sprite "RIFAF0", 320, 400
 {
 	Offset 0, 2
 	Patch "RIFL4", -10, -6
 }
 
-Sprite "SMGRA0", 320, 400
+Sprite "RIFRA0", 320, 400
 {
 	Patch "RIFL1", -13, -3
 }
 
-Sprite "SMGRB0", 320, 400
+Sprite "RIFRB0", 320, 400
 {
 	Patch "RIFL1", -16, 3
 }
 
-Sprite "SMGRC0", 320, 400
+Sprite "RIFRC0", 320, 400
 {
 	Patch "RIFL1", -21, 13
 }
 
-Sprite "SMGRD0", 320, 400
+Sprite "RIFRD0", 320, 400
 {
 	Offset 0, -32
 	Patch "RIFL1", -26, 32
 }
 
-Sprite "SMGRE0", 320, 400
+Sprite "RIFRE0", 320, 400
 {
 	Offset 0, -32
 	Patch "RIFL1", -29, 37
 }
 
-Sprite "SMGRF0", 320, 400
+Sprite "RIFRF0", 320, 400
 {
 	Patch "RIFL1", -34, 61
 }
 
-Sprite "SMGRG0", 320, 400
+Sprite "RIFRG0", 320, 400
 {
 	Patch "RIFL1", -34, 63
 }
@@ -617,7 +617,7 @@ Sprite "PLSMF0", 320, 200
 	Patch "PLSM1", -8, 3
 }
 
-Sprite "PLSMG0", 320, 200
+Sprite "PLRIF0", 320, 200
 {
 	Patch "PLSM1", -8, 0
 }
