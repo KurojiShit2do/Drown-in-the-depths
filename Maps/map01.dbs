@@ -230,9 +230,9 @@ maps
 		overrideceilheight = false;
 		overridebrightness = false;
 		uselongtexturenames = false;
-		viewpositionx = 635.0947f;
-		viewpositiony = -25.37269f;
-		viewscale = 0.8449926f;
+		viewpositionx = 452.482f;
+		viewpositiony = 3434.302f;
+		viewscale = 0.6499882f;
 		scriptcompiler = "zdoom_acs.cfg";
 		
 		grid
@@ -302,21 +302,21 @@ maps
 					prefab1
 					{
 						name = "[Previous]";
-						numberofsectors = 8;
+						numberofsectors = 1;
 						outervertexmultiplier = 1;
 						innervertexmultiplier = 1;
 						stairtype = 0;
-						sectordepth = 32;
+						sectordepth = 64;
 						spacing = 0;
-						frontside = false;
-						singlesectors = false;
+						frontside = true;
+						singlesectors = true;
 						distinctsectors = false;
 						singledirection = false;
-						distinctbaseheights = false;
+						distinctbaseheights = true;
 						flipping = 0;
 						numberofcontrolpoints = 1;
 						applyfloormod = true;
-						floormod = 8;
+						floormod = 64;
 						applyceilingmod = true;
 						ceilingmod = 0;
 						applyfloortexture = false;
@@ -324,13 +324,13 @@ maps
 						applyceilingtexture = false;
 						ceilingtexture = "";
 						applyuppertexture = true;
-						uppertexture = "-";
-						upperunpegged = true;
+						uppertexture = "OBASEJ19";
+						upperunpegged = false;
 						applymiddletexture = false;
 						middletexture = "-";
 						applylowertexture = true;
-						lowertexture = "-";
-						lowerunpegged = true;
+						lowertexture = "OBASEJ19";
+						lowerunpegged = false;
 					}
 				}
 			}
@@ -364,7 +364,7 @@ maps
 				resource;
 				tabtype = 0;
 				scripttype = 1;
-				caretposition = 40;
+				caretposition = 122;
 				activetab = true;
 			}
 		}

@@ -6,7 +6,9 @@ class TempRifle : KurojiWeapon{
         KurojiWeapon.TemparyWeapon true;
         Weapon.BobStyle "Smooth";
         Weapon.SlotNumber 4;
+        Weapon.AmmoGive 1;
         Weapon.SlotPriority 2;
+        Weapon.AmmoType "HACKAMMOBECAUSEIMRETARD";
         Inventory.PickupMessage "You got the \c[r8]Semi Cummy Rifle\c-!";
         Tag "Semi Battle Rifle";
 
@@ -42,7 +44,7 @@ class TempRifle : KurojiWeapon{
                 Weapon_TakeAmmo();
                 A_AlertMonsters();
                 A_StartSound("TemperaryWeapons/RifleFire",1);
-                A_FireBullets(1,1,1,45,"KurojiBulletPuffPurple",FBF_NORANDOM,8192);
+                A_FireBullets(1,1,1,55,"KurojiBulletPuffPurple",FBF_NORANDOM,8192);
             }
             RF11 BC 1 BRIGHT A_RandomWeaponOffset(frandom(-3,3),frandom(-3,3));
             RF11 D 1 A_WeaponOffsetReset;

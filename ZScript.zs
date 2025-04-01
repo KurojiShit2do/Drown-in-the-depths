@@ -71,7 +71,8 @@ class DrownedPlayer : PlayerPawn replaces DoomPlayer{
             DamageMobj(NULL, NULL, random(1,5), 'Drowning');
         }
 
-        if(self.waterdepth == 416 && GetAge() % 70 == 0){
+        if(self.waterdepth >= 416 && GetAge() % 70 == 0){
+            
             A_SetBlend("00 00 00", 1, 25);
             A_Pain();
             DamageMobj(NULL, NULL, random(5,15), 'Drowning');

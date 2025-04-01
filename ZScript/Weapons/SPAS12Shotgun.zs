@@ -67,12 +67,12 @@ class SPAS12 : KurojiWeapon{
             }
             SPSS BC 1 BRIGHT A_RandomWeaponOffset;
             SPSS DEFGHIJ 1;
-            SPSP BDFGHE 1 A_WeaponOffsetReset;
-            SPSP IJ 1;
+            SPSP ABCDEFGH 1 A_WeaponOffsetReset;
+            SPSP IJ 2;
             TNT1 A 0 A_StartSound("SPAS12/Pump",1);
-            SPSP KL 1;
+            SPSP KL 2;
             SPSP LKJI 2;
-            SPSP HGFEDB 1;
+            SPSP HGFEDCBA 1;
             GoTo Ready;
         Reload:
             TNT1 A 0{

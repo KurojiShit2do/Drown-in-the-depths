@@ -12,6 +12,10 @@ class KurojiWeapon : Weapon {
     property MagazineCount: WeaponMagCount;
     property MagazineSize: WeaponMagMax;
 
+    Default{
+        +Inventory.AlwaysPickup;
+    }
+
     action void A_SetOffsetVariables(float xfloat, float yfloat) {
         invoker.offsetrngx = xfloat;
         invoker.offsetrngy = yfloat;
@@ -60,6 +64,22 @@ class KurojiWeapon : Weapon {
 		else
         	playerAmmo.amount -= tradeAmt;
         }
+    }
+
+    override bool TryPickup(in out actor toucher){
+        if(TempWep == true){
+            let pwep = KurojiWeapon (toucher.player.ReadyWeapon);
+        
+            int MaxAmmo = pwep.WeaponMagMax;
+            int CurAmmo = pwep.WeaponMagCount;
+
+            int NEAmmo = MaxAmmo - CurAmmo;
+            if(CurAmmo < MaxAmmo){
+                pwep.WeaponMagCount = CurAmmo + NEAmmo;
+            }
+            return Super.TryPickup(Toucher);
+        }
+        return Super.TryPickup(Toucher);
     }
 }
 
@@ -190,4 +210,13 @@ class ParticlePlasmaFire : Actor
 			Level.SpawnParticle(fp);
 		}
 	}
+}
+
+class HACKAMMOBECAUSEIMRETARD : Ammo{
+    Default{
+        Inventory.Amount 9999999999;
+        Inventory.MaxAmount 9999999999;
+        Ammo.BackpackAmount 9999999999;
+        Ammo.BackpackMaxAmount 9999999999;
+    }
 }

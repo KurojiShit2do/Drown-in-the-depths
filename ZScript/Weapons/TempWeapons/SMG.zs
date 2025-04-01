@@ -6,7 +6,9 @@ class TempSMG : KurojiWeapon {
 
         KurojiWeapon.TemparyWeapon true;
         Weapon.BobStyle "Smooth";
+        Weapon.AmmoType "HACKAMMOBECAUSEIMRETARD";
         Weapon.SlotNumber 4;
+        Weapon.AmmoGive 1;
         Weapon.SlotPriority 4;
         Inventory.PickupMessage "You got the \c[r8]SMG\c-!";
         Tag "SMG";
