@@ -42,6 +42,7 @@ class SPAS12 : KurojiWeapon{
                 }
                 Weapon_TakeAmmo();
                 A_AlertMonsters();
+                A_FireCustomMissile("ShotCaseSpawn",0,0,2,-2);
                 A_StartSound("SPAS12/Fire",1);
                 A_FireBullets(4,3,7,9,"KurojiBulletPuff",FBF_NORANDOM,8192);
                 A_SetOffsetVariables(frandom(-1.5,1.5),frandom(-1,0));
@@ -59,6 +60,7 @@ class SPAS12 : KurojiWeapon{
                 }
                 Weapon_TakeAmmo();
                 A_AlertMonsters();
+                A_FireCustomMissile("ShotCaseSpawn",0,0,2,-2);
                 A_StartSound("SPAS12/Fire",1);
                 A_FireBullets(2,2,8,9,"KurojiBulletPuff",FBF_NORANDOM,8192);
                 A_SetOffsetVariables(frandom(-1.5,1.5),frandom(-1,0));

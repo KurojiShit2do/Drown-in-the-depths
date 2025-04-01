@@ -1,5 +1,11 @@
 //WEAPONS
 
+KnifeHitThing DSKNIFE
+KnifeHitWall DSKNIFE3	
+KnifeMiss DSKNIFE2
+
+TemperaryWeapons/Break  T_WEPBR
+
 Weapons/Select      "Sounds/select.ogg"
 Weapons/DeSelect    "Sounds/deselect.ogg"
 

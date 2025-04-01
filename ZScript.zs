@@ -1,6 +1,7 @@
 version "4.14.0"
 
 #include "ZScript/ZScript_HUD.zs"
+#include "ZScript/Blood.zs"
 
 #include "ZSCript/WeaponBase.zs"
 #include "ZScript/Weapons/SPAS12Shotgun.zs"
@@ -15,9 +16,11 @@ version "4.14.0"
 class DrownedPlayer : PlayerPawn replaces DoomPlayer{
 
     int KAir;
+    int EnergyCap;
 
     Default{
         Player.Displayname "DrownedPlayer";
+        Player.StartItem "Knife";
     }
 
     override void PostBeginPlay() {
@@ -52,9 +55,7 @@ class DrownedPlayer : PlayerPawn replaces DoomPlayer{
                     break;
                 case 3:
                     if(GetAge() % 35 == 0){ 
-                        if(KAir > 0){ 
-                            KAir = KAir - (1*random(1,4)); 
-                        }
+                        TakeAir((1*random(1,4)));
                     }
                     break;
         }
@@ -69,11 +70,16 @@ class DrownedPlayer : PlayerPawn replaces DoomPlayer{
             A_SetBlend("00 00 00", 1, 25);
             A_Pain();
             DamageMobj(NULL, NULL, random(5,15), 'Drowning');
-            if(KAir > 0){ 
-                KAir = KAir - 15; 
-            }
+            TakeAir(15);
+
         }
         }
         if(KAir < 0){KAir = 0;}
+    }
+
+    void TakeAir(int Amount){
+        if(KAir > 0){
+            KAir = KAir - Amount; 
+        }
     }
 }

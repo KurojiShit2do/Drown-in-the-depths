@@ -23,7 +23,7 @@ class TempSMG : KurojiWeapon {
             SMGA A 10 A_StopSound(1);
             GoTo Ready;
         Ready:
-            SMGA  A 1 A_WeaponReady(WRF_ALLOWRELOAD);
+            SMGA  A 1 A_WeaponReady();
             Loop;
         Select:
             TNT1 A 0 A_StartSound("Weapons/Select",1);
@@ -37,7 +37,7 @@ class TempSMG : KurojiWeapon {
         Fire:
             TNT1 A 0 {
                 if(invoker.WeaponMagCount == 0){
-                    SetWeaponState("Reload");
+                    SetWeaponState("Drop");
                     return;
                 }
                 Weapon_TakeAmmo();
@@ -53,7 +53,7 @@ class TempSMG : KurojiWeapon {
         FireLoop:
             TNT1 A 0 {
                 if(invoker.WeaponMagCount == 0){
-                    SetWeaponState("Reload");
+                    SetWeaponState("Drop");
                     return;
                 }
                 Weapon_TakeAmmo();
@@ -66,5 +66,11 @@ class TempSMG : KurojiWeapon {
             SMGA E 1 A_ReFire("FireLoop");
             SMGA FA 1 A_StopSound(1);
             GoTo Ready;
+
+        Drop:
+            TNT1 A 0 A_StopSound(1);
+            TNT1 A 0 A_StartSound("TemperaryWeapons/Break");
+            TNT1 A 1 A_TakeInventory("TempSMG");
+            GoTo Deselect;
     }
 }
