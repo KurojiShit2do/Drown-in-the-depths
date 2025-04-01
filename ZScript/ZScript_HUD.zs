@@ -46,7 +46,9 @@ class myStatusBar : BaseStatusBar
 			if(curWeap.GetClassName() != "Knife" && curWeap.TempWep != true){
 				DrawAmmo(ammo.amount, bigFont);
 			}
-			
+			if(curWeap.TempWep == true){
+				DrawTempAmmo(curWeap.WeaponMagCount,bigFont);
+			}
 			DrawMainWeaponInfo(curWeap.GetClassName(),curWeap.WeaponMagMax,curWeap.WeaponMagCount);
 		}
 
@@ -56,10 +58,19 @@ class myStatusBar : BaseStatusBar
 		DrawImage("HUD_OXY", (46,-50));
     }
 
+	void DrawTempAmmo(int ammo, HUDFont font){
+
+		DrawString(font, FormatNumber(ammo),(-42,-24), DI_TEXT_ALIGN_RIGHT );
+		
+		DrawImage("HP_YLOFF",(-46,-10),DI_MIRROR);
+		DrawImage("HUD_HYBG", (-24, -12));
+		DrawImage("HUD_m2", (-24, -12));
+	}
+
 	void DrawAmmo(int ammo, HUDFont font){
 
 		DrawString(font, FormatNumber(ammo),(-42,-24), DI_TEXT_ALIGN_RIGHT );
-
+		
 		DrawImage("HP_YLOFF",(-46,-10),DI_MIRROR);
 		DrawImage("HUD_HYBG", (-24, -12));
 		DrawImage("HUD_m2", (-24, -12));

@@ -4,7 +4,11 @@ KnifeHitThing DSKNIFE
 KnifeHitWall DSKNIFE3	
 KnifeMiss DSKNIFE2
 
-TemperaryWeapons/Break  T_WEPBR
+TemperaryWeapons/Break          T_WEPBR
+TemperaryWeapons/RifleFire      "Sounds/Rifle/KODFIRE"
+
+TemperaryWeapons/SMGFire        "Sounds/TempSMG/Fire.wav"
+TemperaryWeapons/SMGFireLoop        "Sounds/TempSMG/FireLoop.wav"
 
 Weapons/Select      "Sounds/select.ogg"
 Weapons/DeSelect    "Sounds/deselect.ogg"

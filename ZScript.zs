@@ -9,7 +9,10 @@ version "4.14.0"
 #include "ZScript/Weapons/Rifle.zs"
 #include "ZScript/Weapons/Plasma.zs"
 
+#include "ZScript/Weapons/Ammobox.zs"
+
 #include "ZScript/Weapons/TempWeapons/SMG.zs"
+#include "ZScript/Weapons/TempWeapons/SemiRifle.zs"
 
 //#include "sway/sway.txt"
 
@@ -17,6 +20,7 @@ class DrownedPlayer : PlayerPawn replaces DoomPlayer{
 
     int KAir;
     int EnergyCap;
+    int customdamage;
 
     Default{
         Player.Displayname "DrownedPlayer";
@@ -25,6 +29,7 @@ class DrownedPlayer : PlayerPawn replaces DoomPlayer{
 
     override void PostBeginPlay() {
         KAir = 100;
+        customdamage = 50;
         Super.PostBeginPlay();
     }
 

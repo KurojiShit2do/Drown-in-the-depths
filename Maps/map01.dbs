@@ -230,9 +230,9 @@ maps
 		overrideceilheight = false;
 		overridebrightness = false;
 		uselongtexturenames = false;
-		viewpositionx = 431.9794f;
-		viewpositiony = -190.931f;
-		viewscale = 1.098491f;
+		viewpositionx = 635.0947f;
+		viewpositiony = -25.37269f;
+		viewscale = 0.8449926f;
 		scriptcompiler = "zdoom_acs.cfg";
 		
 		grid
@@ -243,7 +243,7 @@ maps
 			backoffsety = 0;
 			backscalex = 100;
 			backscaley = 100;
-			gridsize = 16;
+			gridsize = 32;
 			gridrotate = 0;
 			gridoriginx = 0;
 			gridoriginy = 0;
@@ -302,13 +302,13 @@ maps
 					prefab1
 					{
 						name = "[Previous]";
-						numberofsectors = 9;
+						numberofsectors = 8;
 						outervertexmultiplier = 1;
 						innervertexmultiplier = 1;
 						stairtype = 0;
 						sectordepth = 32;
 						spacing = 0;
-						frontside = true;
+						frontside = false;
 						singlesectors = false;
 						distinctsectors = false;
 						singledirection = false;
@@ -319,8 +319,8 @@ maps
 						floormod = 8;
 						applyceilingmod = true;
 						ceilingmod = 0;
-						applyfloortexture = true;
-						floortexture = "OBKMTA06";
+						applyfloortexture = false;
+						floortexture = "";
 						applyceilingtexture = false;
 						ceilingtexture = "";
 						applyuppertexture = true;
