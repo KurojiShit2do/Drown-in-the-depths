@@ -1,0 +1,71 @@
+class ExplosiveSwamp : KurojiMonsters{
+    Default{
+        Health 45;
+        Radius 20;
+        Height 56;
+        Mass 100;
+        Speed 3;
+        PainChance 256;
+
+        Tag "RED SWAMP IMP";
+        SeeSound "Monsters/ExplosiveSwamp/See";
+        PainSound "Monsters/ExplosiveSwamp/Pain";
+        DeathSound "Monsters/ExplosiveSwamp/Die";
+        ActiveSound "";
+        HitObituary "%o WAS KILLED BY A RED SWAMP IMP.";
+        Obituary "%o WAS KILLED BY A RED SWAMP IMP.";
+        BloodColor "FFF300";
+    }
+
+	States{
+		Spawn:
+		Idle:
+			RSIA AB 10 A_LOOK;
+			Loop;
+		See:
+			RSIA AABBCCDD 3 A_CHASE();
+			LOOP;
+		Melee:
+			TNT1 A 0 A_JUMP(128, "ATTACKFLIPPED");
+			RSIC AB 8 A_FaceTarget;
+			RSIC C 6 A_CustomMeleeAttack(15,"Monsters/ExplosiveSwamp/Melee");
+			GOTO SEE;
+		Pain:
+			TNT1 A 0 A_JUMP(128, "PAINFLIPPED");
+			RSIG A 2;
+			RSIG A 2 A_PAIN;
+			GOTO SEE;
+		PainFlipped:
+			RSIG B 2;
+			RSIG B 2 A_PAIN;
+			GOTO SEE;
+		Death:
+			TNT1 A 0 A_NOBLOCKING;
+			TNT1 A 0 A_JUMP(128, "DEATHFLIPPED");
+			RSII A 8;
+			RSII B 8 {
+                A_Scream;
+                A_StartSound("weapons/rocklx", 0);
+                A_SmallKurogib();
+                A_Explode(128,128);
+            }
+			RSII C 6;
+			RSII D 6 ;
+			RSII E -1;
+			STOP;
+		DeathFlipped:
+			RSII F 8;
+			RSII G 8 {
+                A_Scream;
+                A_SmallKurogib();
+                A_StartSound("weapons/rocklx", 0);
+                A_Explode(128,128);
+            }
+			RSII H 6;
+			RSII I 6;
+			RSII J -1;
+			STOP;
+		XDeath:
+			GOTO Death;
+	}
+}
